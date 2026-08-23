@@ -1,0 +1,31 @@
+{
+  "$schema": "https://acode.app/schema/plugin/v0.1.0.json",
+  "id": "acode.plugin.erudapro",
+  "name": "Eruda Pro",
+  "version": "1.0.0",
+  "description": "Floating Eruda DevTools for Acode. Inspect DOM elements, monitor network requests, and view console logs directly in the app.",
+  "main": "main.js",
+  "icon": "icon.png",
+  "readme": "readme.md",
+  "changelogs": "changelog.md",
+  "files": [],
+  "minVersionCode": 290,
+  "price": 0,
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Pro-Bandey/Eruda-Pro",
+  "keywords": [
+    "eruda",
+    "devtools",
+    "debugger",
+    "console",
+    "inspector",
+    "network",
+    "acode",
+    "plugin"
+  ],
+  "author": {
+    "name": "Pro Bandey",
+    "github": "Pro-Bandey",
+    "url": "https://Pro-Bandey.github.io"
+  }
+}

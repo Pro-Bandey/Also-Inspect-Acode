@@ -1,0 +1,7 @@
+node_modules/
+dist/
+dev/main.js
+dev/main.js.map
+.env
+*.DS_Store
+upodate.md

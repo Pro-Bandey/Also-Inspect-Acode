@@ -1,0 +1,22 @@
+{
+  "name": "acode-plugin-erudapro",
+  "version": "1.2.0",
+  "description": "Floating Eruda DevTools for Acode. Inspect DOM elements, monitor network requests, and view console logs directly in the app.",
+  "main": "dev/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pro-Bandey/Eruda-Pro.git"
+  },
+  "author": "Pro Bandey",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "node .acode/dev.js",
+    "build": "node .acode/build.js",
+    "publish": "node .acode/publish.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "jszip": "^3.10.1"
+  },
+  "browserslist": "cover 100%,not android < 5"
+}

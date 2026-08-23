@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../src/icon.png" type="image/x-icon">
+    <title>Eruda Plugin - Acode Dev Preview</title>
+    <style>
+        :root {
+            --accent: #4f8cff;
+            --accent-hover: #3b82f6;
+            --accent-soft: rgba(79, 140, 255, 0.15);
+            --bg: #0d1117;
+            --surface: #161b22;
+            --surface-2: #21262d;
+            --border: #30363d;
+            --text: #f0f6fc;
+            --text-secondary: #8b949e;
+            --danger: #f85149;
+            --warning: #d29922;
+            --success: #3fb950;
+            --radius: 12px;
+        }
+
+        body.light {
+            --bg: #f6f8fa;
+            --surface: #ffffff;
+            --surface-2: #eaeef2;
+            --border: #d0d7de;
+            --text: #1f2328;
+            --text-secondary: #656d76;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            background: var(--bg);
+            color: var(--text);
+            font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            overflow: hidden;
+        }
+
+        /*========================= LEFT TEST CONTROLS =========================*/
+        #control-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 24px;
+            overflow-y: auto;
+            border-right: 1px solid var(--border);
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 20px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .card h3 {
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+        }
+
+        button {
+            background: var(--surface-2);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        button:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        button.primary {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        button.primary:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Settings Toggle Item */
+        .setting-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--surface-2);
+            padding: 12px 14px;
+            border-radius: 8px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #3b4252;
+            transition: .3s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .3s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--accent);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+
+        /*========================= RIGHT PHONE PREVIEW =========================*/
+        #phone-preview {
+            width: 460px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--bg);
+            position: relative;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+        }
+
+        #mock-acode-app {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header {
+            height: 54px;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            font-weight: 700;
+        }
+
+        #editor-workspace {
+            flex: 1;
+            padding: 20px;
+            font-family: Consolas, monospace;
+            color: var(--text-secondary);
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+
+        .code-preview {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px;
+            color: var(--text);
+            margin-top: 10px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- LEFT TEST SUITE PANEL -->
+    <div id="control-panel">
+        <div class="header-title">
+            <h2>Eruda Plugin Tester</h2>
+            <span class="badge">Acode Dev Environment</span>
+        </div>
+
+        <!-- Acode Settings Mock Card -->
+        <div class="card">
+            <h3>Acode Settings Emulation</h3>
+            <div class="setting-item">
+                <div>
+                    <strong>developerMode</strong>
+                    <div style="font-size: 12px; color: var(--text-secondary);">Show / Hide Eruda Floating Button</div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="dev-mode-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <button class="primary" onclick="toggleDeveloperMode()">Toggle Floating Button</button>
+        </div>
+
+        <!-- DevTools Testing Triggers -->
+        <div class="card">
+            <h3>Console Log & Error Testing</h3>
+            <p style="font-size: 12px; color: var(--text-secondary);">Click these to test if Eruda captures console events:</p>
+            <div class="grid-3">
+                <button onclick="console.log('Test Log at ' + new Date().toLocaleTimeString())">Log Info</button>
+                <button onclick="console.warn('Simulated Warning!')" style="color: var(--warning)">Warning</button>
+                <button onclick="console.error(new Error('Simulated Runtime Error!'))" style="color: var(--danger)">Error</button>
+            </div>
+            <button onclick="console.table([{ id: 1, name: 'Acode' }, { id: 2, name: 'Eruda' }])">Log Table</button>
+        </div>
+
+        <!-- Network & DOM Triggers -->
+        <div class="card">
+            <h3>Network & DOM Inspection Testing</h3>
+            <div class="grid-2">
+                <button onclick="testNetworkRequest()">Simulate Fetch API</button>
+                <button onclick="testDOMMutation()">Add Test Element</button>
+            </div>
+            <button onclick="toggleTheme()">Toggle Dark / Light Theme</button>
+        </div>
+    </div>
+
+    <!-- RIGHT ACODE PHONE PREVIEW -->
+    <div id="phone-preview">
+        <div id="mock-acode-app">
+            <header>
+                <span>Acode Editor</span>
+                <span style="font-size: 12px; color: var(--accent);">Dev Mode</span>
+            </header>
+
+            <div id="editor-workspace">
+                <div>// Active File: <b>workspace/app.js</b></div>
+                <div class="code-preview">
+const message = "Eruda is loaded over Acode!";<br/>
+console.log(message);<br/>
+<br/>
+// Click the floating icon in the bottom corner to open Eruda.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==========================================
+        // 1. ACODE RUNTIME MOCK
+        // ==========================================
+        const settingsStore = {
+            developerMode: false
+        };
+
+        const eventListeners = {};
+
+        const mockSettings = {
+            get(key) {
+                return settingsStore[key];
+            },
+            update(obj) {
+                Object.assign(settingsStore, obj);
+                Object.keys(obj).forEach(key => {
+                    const eventName = `update:${key}`;
+                    if (eventListeners[eventName]) {
+                        eventListeners[eventName].forEach(cb => cb(obj[key]));
+                    }
+                });
+
+                // Sync toggle UI
+                document.getElementById('dev-mode-toggle').checked = !!settingsStore.developerMode;
+            },
+            on(event, callback) {
+                if (!eventListeners[event]) eventListeners[event] = [];
+                eventListeners[event].push(callback);
+            },
+            off(event, callback) {
+                if (!eventListeners[event]) return;
+                eventListeners[event] = eventListeners[event].filter(cb => cb !== callback);
+            }
+        };
+
+        const registeredPlugins = [];
+        window.acode = {
+            require(module) {
+                if (module === "settings") return mockSettings;
+                return {};
+            },
+            setPluginInit(id, initCallback, settingsConfig) {
+                registeredPlugins.push({ id, initCallback, settingsConfig });
+            },
+            setPluginUnmount(id, unmountCallback) {
+                this._unmount = unmountCallback;
+            }
+        };
+
+        // ==========================================
+        // 2. UI CONTROLS & TEST ACTIONS
+        // ==========================================
+        const toggleInput = document.getElementById('dev-mode-toggle');
+        toggleInput.addEventListener('change', (e) => {
+            mockSettings.update({ developerMode: e.target.checked });
+        });
+
+        function toggleDeveloperMode() {
+            const current = mockSettings.get('developerMode');
+            mockSettings.update({ developerMode: !current });
+        }
+
+        function testNetworkRequest() {
+            fetch("https://jsonplaceholder.typicode.com/todos/" + Math.floor(Math.random() * 10 + 1))
+                .then(res => res.json())
+                .then(data => console.log("[Fetch API Result]", data))
+                .catch(err => console.error("[Fetch Error]", err));
+        }
+
+        function testDOMMutation() {
+            const div = document.createElement("div");
+            div.style.cssText = "margin-top: 10px; padding: 8px; background: rgba(79, 140, 255, 0.2); border-radius: 6px;";
+            div.textContent = "⚡ Mutated Node created at " + new Date().toLocaleTimeString();
+            document.getElementById('editor-workspace').appendChild(div);
+            console.log("[DOM] Injected new element into editor-workspace");
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('light');
+        }
+
+        // ==========================================
+        // 3. LOAD PLUGIN DEV BUILD
+        // ==========================================
+        window.addEventListener('DOMContentLoaded', () => {
+            const pluginScript = document.createElement('script');
+            pluginScript.src = './main.js';
+            pluginScript.onload = () => {
+                registeredPlugins.forEach(p => {
+                    // Pass '../src/' as baseUrl so local files/eruda.js resolves properly
+                    p.initCallback('../src/');
+                });
+            };
+            document.body.appendChild(pluginScript);
+        });
+    </script>
+</body>
+</html>
