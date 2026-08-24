@@ -1,7 +1,7 @@
 node_modules/
+*.session.json
 dist/
 dev/main.js
-dev/main.js.map
 .env
 *.DS_Store
-upodate.md
+update.md

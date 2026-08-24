@@ -10,7 +10,8 @@
   "author": "Pro Bandey",
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "node .acode/dev.js",
+    "dev": "node .acode/dev.js --web",
+    "test": "node .acode/dev.js --test",
     "build": "node .acode/build.js",
     "publish": "node .acode/publish.js"
   },
