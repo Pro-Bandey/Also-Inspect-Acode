@@ -1,8 +1,8 @@
 {
   "$schema": "https://acode.app/schema/plugin/v0.1.0.json",
   "id": "acode.plugin.eruda.pro",
-  "name": "Eruda Pro",
-  "version": "1.0.0",
+  "name": "Also Inspect Acode",
+  "version": "1.1.0",
   "description": "Floating Eruda DevTools for Acode. Inspect DOM elements, monitor network requests, and view console logs directly in the app.",
   "main": "main.js",
   "icon": "icon.png",
@@ -12,7 +12,7 @@
   "minVersionCode": 290,
   "price": 0,
   "license": "Apache-2.0",
-  "repository": "https://github.com/Pro-Bandey/Eruda-Pro",
+  "repository": "https://github.com/Pro-Bandey/Also-Inspect-Acode",
   "keywords": [
     "eruda",
     "devtools",
