@@ -1,5 +1,5 @@
 {
-  "name": "acode-plugin-erudapro",
+  "name": "acode-plugin-eruda.pro",
   "version": "1.2.0",
   "description": "Floating Eruda DevTools for Acode. Inspect DOM elements, monitor network requests, and view console logs directly in the app.",
   "main": "dev/main.js",
