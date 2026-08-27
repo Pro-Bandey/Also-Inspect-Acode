@@ -27,13 +27,13 @@
 
 <br>
 <p align="center">
-  <img src="https://pro-bandey.github.io/shots/Eruda-Pro/001.png" width="45%" alt="Also Inspect Acode Screenshot 1">
-  <img src="https://pro-bandey.github.io/shots/Eruda-Pro/002.png" width="45%" alt="Also Inspect Acode Screenshot 2">
+  <img src="https://pro-bandey.github.io/shots/Also-Inspect-Acode/001.png" width="45%" alt="Also Inspect Acode Screenshot 1">
+  <img src="https://pro-bandey.github.io/shots/Also-Inspect-Acode/002.png" width="45%" alt="Also Inspect Acode Screenshot 2">
 </p>
 
 <p align="center">
-  <img src="https://pro-bandey.github.io/shots/Eruda-Pro/003.png" width="45%" alt="Also Inspect Acode Screenshot 3">
-  <img src="https://pro-bandey.github.io/shots/Eruda-Pro/004.png" width="45%" alt="Also Inspect Acode Screenshot 4">
+  <img src="https://pro-bandey.github.io/shots/Also-Inspect-Acode/003.png" width="45%" alt="Also Inspect Acode Screenshot 3">
+  <img src="https://pro-bandey.github.io/shots/Also-Inspect-Acode/004.png" width="45%" alt="Also Inspect Acode Screenshot 4">
 </p>
 
 </details>

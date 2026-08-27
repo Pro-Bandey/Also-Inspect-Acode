@@ -1,7 +1,7 @@
 {
-  "name": "acode-plugin-eruda.pro",
+  "name": "acode-plugin-alsoinspectacode",
   "version": "1.2.0",
-  "description": "Floating Eruda DevTools for Acode. Inspect DOM elements, monitor network requests, and view console logs directly in the app.",
+  "description": "A mobile in-app DevTools overlay for Acode that lets you inspect DOM elements, view console logs, monitor network activity, and debug your environment directly in any tab of Acode.",
   "main": "dev/main.js",
   "repository": {
     "type": "git",

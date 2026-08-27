@@ -76,7 +76,7 @@ export class ErudaPlugin {
         // Fallback to CDN if local bundle isn't found
         const cdnScript = document.createElement("script");
         cdnScript.id = "eruda-script";
-        cdnScript.src = "https://cdn.jsdelivr.net/npm/eruda";
+        cdnScript.src = "https://cdn.jsdelivr.net/npm/eruda"
         cdnScript.onload = () => {
           this.#scriptLoaded = true;
           resolve();
@@ -105,7 +105,7 @@ export class ErudaPlugin {
       list: [
         {
           key: "developerMode",
-          text: "Enable Eruda Floating DevTools",
+          text: "Enable Also Inspect Acode Floating DevTools",
           checkbox: !!settings.get("developerMode")
         }
       ],
