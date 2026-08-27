@@ -1,6 +1,6 @@
-# Eruda DevTools for Acode
+# Also Inspect Acode (Eruda DevTools for Acode)
 
-> A mobile in-app DevTools overlay for Acode that lets you inspect DOM elements, view console logs, monitor network activity, and debug your environment directly on your device.
+> A mobile in-app DevTools overlay for Acode that lets you inspect DOM elements, view console logs, monitor network activity, and debug your environment directly in any tab of Acode.
 
 ![Version](https://img.shields.io/badge/version-v1.0.0-blue)
 ![License](https://img.shields.io/badge/license-Apache--2.0-green)
@@ -27,13 +27,13 @@
 
 <br>
 <p align="center">
-  <img src="https://pro-bandey.github.io/shots/Eruda-Pro/001.png" width="45%" alt="NameOfPlugin Screenshot 1">
-  <img src="https://pro-bandey.github.io/shots/Eruda-Pro/002.png" width="45%" alt="NameOfPlugin Screenshot 2">
+  <img src="https://pro-bandey.github.io/shots/Eruda-Pro/001.png" width="45%" alt="Also Inspect Acode Screenshot 1">
+  <img src="https://pro-bandey.github.io/shots/Eruda-Pro/002.png" width="45%" alt="Also Inspect Acode Screenshot 2">
 </p>
 
 <p align="center">
-  <img src="https://pro-bandey.github.io/shots/Eruda-Pro/003.png" width="45%" alt="NameOfPlugin Screenshot 3">
-  <img src="https://pro-bandey.github.io/shots/Eruda-Pro/004.png" width="45%" alt="NameOfPlugin Screenshot 4">
+  <img src="https://pro-bandey.github.io/shots/Eruda-Pro/003.png" width="45%" alt="Also Inspect Acode Screenshot 3">
+  <img src="https://pro-bandey.github.io/shots/Eruda-Pro/004.png" width="45%" alt="Also Inspect Acode Screenshot 4">
 </p>
 
 </details>
@@ -44,7 +44,7 @@
 
 1. Open **Acode**.
 2. Navigate to **Settings** > **Plugins**.
-3. Search for **Eruda**.
+3. Search for **Also Inspect Acode**.
 4. Click **Install**.
 
 ---
@@ -54,15 +54,15 @@
 You can enable or disable the floating DevTools icon from the plugin settings:
 
 1. Open **Settings** > **Plugin Settings**.
-2. Select **Eruda**.
+2. Select **Also Inspect Acode**.
 3. Toggle:
-   - **Enable Eruda Floating DevTools:** Turn on to show the floating entry button; turn off to hide and unmount.
+   - **Enable Also Inspect Acode Floating DevTools:** Turn on to show the floating entry button; turn off to hide and unmount.
 
 ---
 
 ## 🚀 How to Use
 
-1. Enable the plugin via **Settings > Plugin Settings > Eruda**.
+1. Enable the plugin via **Settings > Plugin Settings > Also Inspect Acode**.
 2. A floating **Gear/DevTools icon** will appear in the bottom corner of your screen.
 3. **Tap** the floating icon to open the full Eruda DevTools panel.
 4. **Drag** the floating icon to move it to any convenient spot on your screen.
